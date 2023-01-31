@@ -9,8 +9,8 @@ Game.destroy_all
 
 Game.create!(
   questions: [
-    "What is the capital of France?",
-    "What is the capital of Italy?",
-    "What is the capital of Spain?"
+    ["What is the capital of France?", "Paris"],
+    ["What is the capital of Italy?", "Rome"],
+    ["What is the capital of Spain?", "Madrid"]
   ]
 )
