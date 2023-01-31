@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     player = Player.find_or_create_by(name: params[:name])
-    session[:current_id] = player.id
+    session[:current_player_id] = player.id
     redirect_to games_path
   end
 
