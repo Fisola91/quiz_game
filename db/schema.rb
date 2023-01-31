@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_30_123655) do
+ActiveRecord::Schema.define(version: 2023_01_31_222056) do
 
   create_table "games", force: :cascade do |t|
     t.text "questions"
@@ -24,4 +24,16 @@ ActiveRecord::Schema.define(version: 2023_01_30_123655) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.string "answer"
+    t.integer "game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "player_id", null: false
+    t.index ["game_id"], name: "index_questions_on_game_id"
+    t.index ["player_id"], name: "index_questions_on_player_id"
+  end
+
+  add_foreign_key "questions", "games"
+  add_foreign_key "questions", "players"
 end

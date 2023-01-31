@@ -1,11 +1,9 @@
 class GamesController < ApplicationController
-  def index
+  def show
     if session[:current_player_id]
       @player = Player.find(session[:current_player_id])
+      @game = Game.find(params[:id])
+      @question = Game.question.first
     end
-    @question = Game.question
-  end
-
-  def start
   end
 end
