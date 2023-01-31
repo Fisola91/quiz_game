@@ -18,4 +18,18 @@ RSpec.describe "game" do
     fill_in "Player name", with: "Fisola"
     click_on "Start player session"
   end
+
+  it "allows a player to sign out" do
+    visit "/"
+    expect(page).to have_text("Quiz Game")
+    expect(page).to have_text("You are welcome to quiz game")
+    expect(page).to have_text("Enter your name to start the quiz")
+    fill_in "Player name", with: "Fisola"
+    click_on "Start player session"
+    expect(page).to have_text("You are playing as Fisola")
+
+    question = Game.select(:questions).last[:questions].sample
+
+    expect(page).to have_text(question)
+  end
 end

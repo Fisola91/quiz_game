@@ -1,4 +1,5 @@
 class Game < ApplicationRecord
+  has_many :questions
   serialize :questions
   scope :question, -> { select(:questions).last[:questions].sample }
 
