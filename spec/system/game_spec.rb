@@ -13,7 +13,6 @@ RSpec.describe "game" do
   it "allows a player to sign in" do
     visit "/"
     expect(page).to have_text("Quiz Game")
-    expect(page).to have_text("You are welcome to quiz game")
     expect(page).to have_text("Enter your name to start the quiz")
     fill_in "Player name", with: "Fisola"
     click_on "Start player session"
@@ -22,11 +21,11 @@ RSpec.describe "game" do
   it "allows a player to sign out" do
     visit "/"
     expect(page).to have_text("Quiz Game")
-    expect(page).to have_text("You are welcome to quiz game")
     expect(page).to have_text("Enter your name to start the quiz")
     fill_in "Player name", with: "Fisola"
     click_on "Start player session"
     expect(page).to have_text("You are playing as Fisola")
+    expect(page).to have_text("You are welcome to quiz game")
     click_on "Sign out"
 
     # question = Game.select(:questions).first[:questions].sample[0]
@@ -35,4 +34,6 @@ RSpec.describe "game" do
     # fill_in "your answer", with: "Paris"
     # click_on "check answer"
   end
+
+
 end
