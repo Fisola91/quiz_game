@@ -5,12 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Game.destroy_all
 
-Game.create!(
+Question.destroy_all
+Question.create!(
   questions: [
-    ["What is the capital of France?", "Paris"],
-    ["What is the capital of Italy?", "Rome"],
-    ["What is the capital of Spain?", "Madrid"]
+    ["What is the capital city of France", "Paris"],
+    ["What is the capital city of Spain", "Madrid"],
+    ["What is the capital city of Italy", "Rome"],
+    ["What is the capital city of Nigeria", "Abuja"],
   ]
 )

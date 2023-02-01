@@ -1,10 +1,10 @@
-class QuestionsController < ApplicationController
+class AttemptsController < ApplicationController
   def create
     if session[:current_player_id]
       player = Player.find(session[:current_player_id])
       game = Game.find(params[:game_id])
       answer = params[:answer]
-      Question.create(
+      Attempt.create(
         game: game,
         answer: answer,
         player: player

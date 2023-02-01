@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_31_222056) do
+ActiveRecord::Schema.define(version: 2023_02_01_125010) do
+
+  create_table "attempts", force: :cascade do |t|
+    t.string "answer"
+    t.integer "game_id", null: false
+    t.integer "player_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_attempts_on_game_id"
+    t.index ["player_id"], name: "index_attempts_on_player_id"
+  end
 
   create_table "games", force: :cascade do |t|
-    t.text "questions"
+    t.text "question"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -25,15 +35,11 @@ ActiveRecord::Schema.define(version: 2023_01_31_222056) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "answer"
-    t.integer "game_id", null: false
+    t.text "questions"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "player_id", null: false
-    t.index ["game_id"], name: "index_questions_on_game_id"
-    t.index ["player_id"], name: "index_questions_on_player_id"
   end
 
-  add_foreign_key "questions", "games"
-  add_foreign_key "questions", "players"
+  add_foreign_key "attempts", "games"
+  add_foreign_key "attempts", "players"
 end

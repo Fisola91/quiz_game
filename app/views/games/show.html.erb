@@ -1,8 +1,4 @@
 <h2>
   <%= @question %>
 </h2>
-<%= form_with url: game_questions_path(@game), method: :post, html: { "data-turbo" => false } do |f| %>
-  <%= f.label :name, "your answer" %>
-  <%= f.text_field :answer %>
-  <%= f.submit "check answer" %>
-<% end %>
+<%= render @component %>

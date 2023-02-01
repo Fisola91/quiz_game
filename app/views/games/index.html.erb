@@ -1,0 +1,4 @@
+<p>You are welcome to quiz game.</p>
+<%= form_with url: games_path, method: :post, html: { "data-turbo" => false } do |f| %>
+  <%= f.submit "start quiz" %>
+  <% end %>

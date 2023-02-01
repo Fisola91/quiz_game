@@ -1,1 +1,9 @@
-<div>Add Game template here</div>
+<p><strong><%= question %></strong></p>
+
+<%= form_with url: game_attempts_path(@game), method: :post, html: { "data-turbo" => false } do |f| %>
+  <%= f.label :name, "your answer" %>
+  <%= f.text_field :answer %>
+  <%= f.submit "check answer" %>
+<% end %>
+
+<p><strong><%= message %></strong></p>
