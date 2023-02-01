@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "game" do
   before do
-    Game.create!(
+    Question.create!(
       questions: [
         "What is the capital of France?",
         "What is the capital of Italy?",
@@ -27,12 +27,31 @@ RSpec.describe "game" do
     expect(page).to have_text("You are playing as Fisola")
     expect(page).to have_text("You are welcome to quiz game")
     click_on "Sign out"
+  end
 
-    # question = Game.select(:questions).first[:questions].sample[0]
+  it "allows a player to play quiz game" do
+    visit "/"
+    expect(page).to have_text("Quiz Game")
+    expect(page).to have_text("Enter your name to start the quiz")
+    fill_in "Player name", with: "Fisola"
+    click_on "Start player session"
+    expect(page).to have_text("You are playing as Fisola")
+    expect(page).to have_text("You are welcome to quiz game")
+    click_on "start quiz"
 
-    # expect(page).to have_text(question)
-    # fill_in "your answer", with: "Paris"
-    # click_on "check answer"
+    question = Question.select(:questions)
+                       .last[:questions]
+                       .sample
+                       .first
+    answer = Question.select(:questions)
+                     .last[:questions]
+                     .sample
+                     .second
+
+    expect(page).to have_text(question)
+    fill_in "your answer" with: answer
+
+    expect(page).to have_text("You are correct!")
   end
 
 
