@@ -1,5 +1,5 @@
 class Game < ApplicationRecord
-  has_one :questions
+  has_many :questions
   serialize :questions
   scope :question, -> { select(:questions)
                         .last[:questions]

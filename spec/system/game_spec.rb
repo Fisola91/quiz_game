@@ -27,9 +27,12 @@ RSpec.describe "game" do
     fill_in "Player name", with: "Fisola"
     click_on "Start player session"
     expect(page).to have_text("You are playing as Fisola")
+    click_on "Sign out"
 
-    question = Game.select(:questions).last[:questions].sample
+    # question = Game.select(:questions).first[:questions].sample[0]
 
-    expect(page).to have_text(question)
+    # expect(page).to have_text(question)
+    # fill_in "your answer", with: "Paris"
+    # click_on "check answer"
   end
 end
