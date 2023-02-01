@@ -1,6 +1,7 @@
 require "./app/controllers/games_controller"
 class GameComponent < ViewComponent::Base
   attr_reader :game
+
   def initialize(game:)
     @game = game
   end

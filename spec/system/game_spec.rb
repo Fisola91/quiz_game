@@ -50,7 +50,7 @@ RSpec.describe "game" do
                      .second
 
     expect(page).to have_text(question)
-    fill_in "your answer" with: answer
+    fill_in "your answer", with: answer
 
     expect(page).to have_text("You are correct!")
   end
