@@ -3,7 +3,6 @@ class GameComponent < ViewComponent::Base
   attr_reader :game
   def initialize(game:)
     @game = game
-    @score = 0
   end
 
   def question
@@ -25,11 +24,9 @@ class GameComponent < ViewComponent::Base
     if no_answer?
       nil
     elsif response != answer
-      "wrong"
-      @score
+      "You are wrong! The answer is #{answer.upcase}"
     else
-      "correct"
-      @score =+1
+      "You are correct!"
     end
   end
 end
