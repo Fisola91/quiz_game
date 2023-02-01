@@ -10,6 +10,7 @@ RSpec.describe "game" do
       ]
     )
   end
+
   it "allows a player to sign in" do
     visit "/"
     expect(page).to have_text("Quiz Game")
@@ -53,6 +54,4 @@ RSpec.describe "game" do
 
     expect(page).to have_text("You are correct!")
   end
-
-
 end
