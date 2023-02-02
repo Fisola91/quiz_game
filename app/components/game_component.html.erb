@@ -11,36 +11,11 @@
     <%= f.submit "Check answer", class: "submit" %>
   </div>
 <% end %>
-<%# = form_with url: game_attempts_path(game), method: :post, class: "pb2", html: { "data-turbo" => false } do
-    p = "Your guess"
-    input#color-1 type="radio" name="options" value="shuffle_options.first"
-      option selected="selected"
-      - colors.each do |color|
-        option value=color.upcase
-          = color
-    select#color-2 name="guess[]"
-      option selected="selected"
-      - colors.each do |color|
-        option value=color.upcase
-          = color
-    select#color-3 name="guess[]"
-      option selected="selected"
-      - colors.each do |color|
-        option value=color.upcase
-          = color
-    select#color-4 name="guess[]"
-      option selected="selected"
-      - colors.each do |color|
-        option value=color.upcase
-          = color
-    br
-
-    input type="submit" value="Check" %>
 
 <p><%= message %></p>
 
 <% if message %>
   <%= form_with url: games_path, method: :post, html: { "data-turbo" => false } do |f| %>
-    <%= f.submit "generate question", class: "blue-button" %>
+    <%= f.submit "Generate question", class: "blue-button" %>
   <% end %>
 <% end %>
