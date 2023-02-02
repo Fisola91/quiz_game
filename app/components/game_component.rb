@@ -13,6 +13,7 @@ class GameComponent < ViewComponent::Base
   def no_answer?
     game.attempts.none?
   end
+
   def response
     game.attempts.last.answer
   end

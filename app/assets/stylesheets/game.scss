@@ -1,3 +1,17 @@
 // Place all the styles related to the Game controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.blue-button {
+  background-color: rgb(134, 138, 247);
+  color: rgb(248, 245, 245);
+  font-size: large;
+  padding: 5px
+}
+
+.pink-button {
+  background-color: rgb(199, 115, 25);
+  color: rgb(248, 245, 245);
+  font-weight: normal;
+
+}

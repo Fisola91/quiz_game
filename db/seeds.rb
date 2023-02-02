@@ -17,8 +17,12 @@ Question.create!(
     ["Who captained the Olympic gold medal winning team of 1996?", "Nwankwo Kanu"],
     ["Nigeria's national sport is one of the most watched in the world. What is it?", "Soccer"],
     ["Whose face is on the 20 Naira Note?", "Murtala Muhammed"],
-    ["Nigeria's flag consists of two colors. What are they?", "White and green"]
-
-
+    ["Nigeria's flag consists of two colors. What are they?", "White and green"],
+    ["The name of which city of Nigeria translates to 'by the edge of the meadow' in Yoruba?", "Ibadan"],
+    ["What's the highest point in Nigeria?", "Chappal Waddi"],
+    ["What is the capital of Abia state?", "Umuahia"],
+    ["What natural physical feature was Nigeria named after?", "Niger River"],
+    ["Who was the president of 'Kalakuta Republic'?", "Fela Anikulapo-Kuti"],
+    ["Nigerians Wole Soyinka, Ben Okri and Chinua Achebe have all achieved renown in which field?", "Literature"]
   ]
 )

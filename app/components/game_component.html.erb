@@ -5,13 +5,13 @@
 <%= form_with url: game_attempts_path(@game), method: :post, html: { "data-turbo" => false } do |f| %>
   <%= f.label :name, "Your answer" %>
   <%= f.text_field :answer %>
-  <%= f.submit "Check answer" %>
+  <%= f.submit "Check answer", class: "pink-button" %>
 <% end %>
 
 <p><%= message %></p>
 
 <% if message %>
   <%= form_with url: games_path, method: :post, html: { "data-turbo" => false } do |f| %>
-    <%= f.submit "generate question" %>
+    <%= f.submit "generate question", class: "blue-button" %>
   <% end %>
 <% end %>
