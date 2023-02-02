@@ -23,7 +23,7 @@ class GameComponent < ViewComponent::Base
   end
 
   def answer
-    JSON.parse(game.question).last
+    JSON.parse(game.question).last.join
   end
 
   def message
