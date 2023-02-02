@@ -19,14 +19,5 @@ class GamesController < ApplicationController
       game = Game.find(params[:id])
       @component = GameComponent.new(game: game)
     end
-    # binding.pry
-    # unless @game.questions.last
-    #   binding.pry
-    #   if game.questions.last.answer == Game.question.second
-    #     "correct"
-    #   else
-    #     "wrong"
-    #   end
-    # end
   end
 end
