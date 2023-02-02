@@ -18,6 +18,10 @@ class GameComponent < ViewComponent::Base
     game.attempts.last.answer
   end
 
+  def solution_options
+    JSON.parse(game.question)[1]
+  end
+
   def answer
     JSON.parse(game.question).last
   end
