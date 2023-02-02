@@ -1,8 +1,9 @@
 
 Question.destroy_all
+
 Question.create!(
   questions: [
-    ["What is the capital city of France", ["Paris", "Copenhagen", "Helsinki", "Berlin"], ["Paris"]],
+    ["What is the capital city of France", ["Copenhagen", "Paris", "Helsinki", "Berlin"], ["Paris"]],
     ["What is the capital city of Spain", ["Madrid", "Sevilla", "Oslo", "Barcelona"], ["Madrid"]],
     ["What is the capital city of Italy", ["Rome", "Milan", "Lisbon", "Porto"], ["Rome"]],
     ["What is the capital city of Nigeria", ["Abuja", "Lagos", "Calabar", "Lokoja"], ["Abuja"]]

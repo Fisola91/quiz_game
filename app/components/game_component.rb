@@ -23,7 +23,9 @@ class GameComponent < ViewComponent::Base
   end
 
   def answer
-    JSON.parse(game.question).last.join
+    last_option = JSON.parse(game.question).last
+    return response if last_option.include?(response)
+    last_option.join
   end
 
   def message
