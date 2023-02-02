@@ -1,9 +1,11 @@
-<p><strong><%= question %></strong></p>
+<div>
+  <h3><%= question %></h3>
+</div>
 
 <%= form_with url: game_attempts_path(@game), method: :post, html: { "data-turbo" => false } do |f| %>
-  <%= f.label :name, "your answer" %>
+  <%= f.label :name, "Your answer" %>
   <%= f.text_field :answer %>
-  <%= f.submit "check answer" %>
+  <%= f.submit "Check answer" %>
 <% end %>
 
 <p><%= message %></p>

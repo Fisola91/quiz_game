@@ -13,6 +13,7 @@ class GamesController < ApplicationController
       redirect_to game_path(game)
     end
   end
+
   def show
     if session[:current_player_id]
       @player = Player.find(session[:current_player_id])
