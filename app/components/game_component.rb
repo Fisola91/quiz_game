@@ -6,8 +6,12 @@ class GameComponent < ViewComponent::Base
     @game = game
   end
 
+  def sample_question
+    JSON.parse(game.question)
+  end
+
   def question
-    JSON.parse(game.question).first
+    sample_question.first
   end
 
   def no_answer?
@@ -19,11 +23,11 @@ class GameComponent < ViewComponent::Base
   end
 
   def solution_options
-    JSON.parse(game.question)[1]
+    sample_question[1]
   end
 
   def answer
-    last_option = JSON.parse(game.question).last
+    last_option = sample_question.last
     return response if last_option.include?(response)
     last_option.join
   end
