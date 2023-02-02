@@ -47,7 +47,7 @@ RSpec.describe "game" do
     answer = Question.select(:questions)
                      .last[:questions]
                      .sample
-                     .second
+                     .last
 
     expect(page).to have_text(question)
     fill_in "your answer", with: answer
