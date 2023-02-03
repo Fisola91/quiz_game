@@ -29,7 +29,7 @@ class GameComponent < ViewComponent::Base
   def answer
     last_option = sample_question.last
     return response if last_option.include?(response)
-    last_option.join
+    last_option
   end
 
   def message
