@@ -3,7 +3,7 @@
 </div>
 
 <%= form_with url: game_attempts_path(@game), method: :post, html: { "data-turbo" => false } do |f|%>
-  <%= f.radio_button :answer, "#{solution_options[0]}", :autofocus => "autofocus"  %> <%= solution_options[0] %> <br>
+  <%= f.radio_button :answer, "#{solution_options[0]}" %> <%= solution_options[0] %> <br>
   <%= f.radio_button :answer, "#{solution_options[1]}" %> <%= solution_options[1] %> <br>
   <%= f.radio_button :answer, "#{solution_options[2]}" %> <%= solution_options[2] %> <br>
   <%= f.radio_button :answer, "#{solution_options[3]}" %> <%= solution_options[3] %> <br>

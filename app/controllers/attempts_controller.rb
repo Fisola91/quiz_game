@@ -9,6 +9,7 @@ class AttemptsController < ApplicationController
         answer: answer,
         player: player
       )
+
       redirect_to game_path(game)
     end
   end
