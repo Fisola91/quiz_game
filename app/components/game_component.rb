@@ -3,7 +3,6 @@ require "./app/constant_variable"
 
 class GameComponent < ViewComponent::Base
   attr_reader :game
-  include Chances
 
   def initialize(game:)
     @game = game
