@@ -8,12 +8,28 @@ class GameComponent < ViewComponent::Base
     @game = game
   end
 
-  def sample_question
+  def sample_questions
     JSON.parse(game.question)
   end
 
   def question
-    sample_question.first.first
+    # if game.attempts.count == 0 || game.attempts.count > 0
+    #   sample_questions.first.first
+    # end
+    next_question
+  end
+
+  # def previous_questions
+  #   previous_question =[] sample_questions.first
+  #   previous_question << sample_questions.first
+  #   previous_question
+  # end
+
+  def next_question
+    if sample_questions.include?(previous_questions)
+      sample_questions.delete(previous_questions)
+    end
+    sample_questions.first.first
   end
 
   def no_answer?
@@ -25,11 +41,11 @@ class GameComponent < ViewComponent::Base
   end
 
   def solution_options
-    sample_question.first[1]
+    sample_questions.first[1]
   end
 
   def answer
-    last_option = sample_question.first.last
+    last_option = sample_questions.first.last
     return response if last_option.include?(response)
     last_option
   end
