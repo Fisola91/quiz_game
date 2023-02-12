@@ -2,6 +2,6 @@ class Question < ApplicationRecord
   serialize :questions
   scope :question, -> { select(:questions)
                         .last[:questions]
-                        .shuffle.sample
+                        .shuffle.first(3)
                          }
 end

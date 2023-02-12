@@ -13,7 +13,7 @@ class GameComponent < ViewComponent::Base
   end
 
   def question
-    sample_question.first
+    sample_question.first.first
   end
 
   def no_answer?
@@ -25,11 +25,11 @@ class GameComponent < ViewComponent::Base
   end
 
   def solution_options
-    sample_question[1]
+    sample_question.first[1]
   end
 
   def answer
-    last_option = sample_question.last
+    last_option = sample_question.first.last
     return response if last_option.include?(response)
     last_option
   end
